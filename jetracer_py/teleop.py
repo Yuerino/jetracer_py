@@ -22,17 +22,17 @@ class Teleop(Node):
             while 42:
                 key = self.get_key()
                 if key == 'w':
-                    self.publisher_throttle.publish(Float32(1.0))
+                    self.publisher_throttle.publish(Float32(data=1.0))
                 elif key == 'a':
-                    self.publisher_steering.publish(Float32(1.0))
+                    self.publisher_steering.publish(Float32(data=1.0))
                 elif key == 's':
-                    self.publisher_throttle.publish(Float32(-1.0))
+                    self.publisher_throttle.publish(Float32(data=-1.0))
                 elif key == 'd':
-                    self.publisher_steering.publish(Float32(-1.0))
+                    self.publisher_steering.publish(Float32(data=-1.0))
                 elif key == 'i':
-                    self.publisher_steering.publish(Float32(0.0))
+                    self.publisher_steering.publish(Float32(data=0.0))
                 elif key == 'o':
-                    self.publisher_throttle.publish(Float32(0.0))
+                    self.publisher_throttle.publish(Float32(data=0.0))
                 self.rate.sleep()
         except Exception as e:
             self.get_logger().info(e)

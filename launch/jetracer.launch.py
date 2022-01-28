@@ -5,13 +5,13 @@ from launch_ros.actions import Node
 def generate_launch_description():
     controller_node = Node(
         package="jetracer_py",
-        node_executable="controller",
+        executable="controller",
         output="screen",
         emulate_tty=True
     )
     teleop_node = Node(
         package="jetracer_py",
-        node_executable="teleop",
+        executable="teleop",
         output="screen",
         emulate_tty=True
     )

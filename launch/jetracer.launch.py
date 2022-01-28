@@ -1,5 +1,6 @@
 from launch import LaunchDescription
-import launch_ros.actions import Node
+from launch_ros.actions import Node
+
 
 def generate_launch_description():
     controller_node = Node(

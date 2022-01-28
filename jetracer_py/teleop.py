@@ -14,8 +14,8 @@ settings = termios.tcgetattr(sys.stdin)
 class Teleop(Node):
     def __init__(self):
         super().__init__('Teleop')
-        self.publisher_throttle = self.creat_publisher(Float32, "throttle", 1000)
-        self.publisher_steering = self.creat_publisher(Float32, "steering", 1000)
+        self.publisher_throttle = self.create_publisher(Float32, "throttle", 1000)
+        self.publisher_steering = self.create_publisher(Float32, "steering", 1000)
         self.rate = self.create_rate(10)  # 10 Hz
 
         try:

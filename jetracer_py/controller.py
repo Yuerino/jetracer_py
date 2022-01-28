@@ -7,8 +7,8 @@ from waveshare.nvidia_racer import NvidiaRacecar
 class Controller(Node):
     def __init__(self):
         super().__init__('Controller')
-        self.subscription_throttle = self.create_subcription(Float32, "throttle", self.throttle_callback, 1000)
-        self.subscription_steering = self.create_subcription(Float32, "steering", self.steering_callback, 1000)
+        self.subscription_throttle = self.create_subscription(Float32, "throttle", self.throttle_callback, 1000)
+        self.subscription_steering = self.create_subscription(Float32, "steering", self.steering_callback, 1000)
         self.car = NvidiaRacecar()
         self.car.steering_gain = 0
         self.car.steering_offset = 0

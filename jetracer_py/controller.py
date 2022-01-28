@@ -24,6 +24,12 @@ class Controller(Node):
         self.car.throttle = msg.data
         self.get_logger().info('Set throttle to %f' % msg.data)
 
+    def destroy_node(self):
+        self.get_logger().info('Shutting down controller node.')
+        self.car.steering = 0.0
+        self.car.throttle = 0.0
+        super().destroy_node()
+
 
 def main(args=None):
     rclpy.init(args=args)

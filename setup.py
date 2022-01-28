@@ -26,8 +26,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'controller = jetracer_py.subscriber_member_function:main',
-            'teleop = jetracer_py.publisher_member_function:main'
+            'controller = jetracer_py.controller:main',
+            'teleop = jetracer_py.teleop:main'
         ],
     },
 )
